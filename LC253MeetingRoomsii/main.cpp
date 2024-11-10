@@ -33,6 +33,8 @@ public:
 
             return pq.size();
         }
+        // Time complexity O(N logN) - sorting takes NlogN; pq.top() takes logN
+        // Space complexity O(N) - min heap occupies N
     };
 
     /**
