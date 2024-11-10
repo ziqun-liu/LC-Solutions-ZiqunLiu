@@ -81,11 +81,13 @@ int main() {
     vector<vector<int>> intervals = {{0,  30},
                                      {5,  10},
                                      {15, 20}};
-    cout << (Solution::PriorityQueue::minMeetingRooms(intervals) == Solution::SortingStartEnd::minMeetingRooms(intervals)) << endl;
+    cout << (Solution::PriorityQueue::minMeetingRooms(intervals) ==
+             Solution::SortingStartEnd::minMeetingRooms(intervals)) << endl;
 
     intervals = {{7, 10},
                  {2, 4}};
-    cout << (Solution::PriorityQueue::minMeetingRooms(intervals) == Solution::SortingStartEnd::minMeetingRooms(intervals)) << endl;
+    cout << (Solution::PriorityQueue::minMeetingRooms(intervals) ==
+             Solution::SortingStartEnd::minMeetingRooms(intervals)) << endl;
 
     return 0;
 }
