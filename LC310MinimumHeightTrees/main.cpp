@@ -8,18 +8,14 @@ using namespace std;
 class Solution {
 public:
     vector<int> findMinHeightTrees(const int &n, vector<vector<int>>& edges) {
-        vector<int> leafNodes, newLeafNodes;
-        if (edges.empty() || !edges.size()) {
-            leafNodes.push_back(0);
-            return leafNodes;
-        }
-
-        vector<set<int>> adjacencySets;
+        if (n == 1) return {0}; // One node has no edge
+        vector<set<int>> adjacencySets(n);
         for (const vector<int> &edge : edges) {
             adjacencySets[edge[0]].insert(edge[1]);
             adjacencySets[edge[1]].insert(edge[0]);
         }
 
+        vector<int> leafNodes, newLeafNodes;
         // Find leaf objects and place them in leafNodes array
         for (int i=0; i<n; ++i) {
             if (adjacencySets[i].size() == 1)
@@ -42,10 +38,11 @@ public:
                         newLeafNodes.push_back(adjNum);
                 }
             }
-            leafNodes = newLeafNodes;
+            leafNodes = move(newLeafNodes);
         } // End while
         return leafNodes;
-    }
+    } // Time complexity O()
+      // Space complexity O()
 };
 
 int main() {
