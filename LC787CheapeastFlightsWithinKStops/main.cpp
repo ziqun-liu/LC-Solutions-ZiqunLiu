@@ -40,7 +40,7 @@ public:
             }
 
             // Initialize an array to store the number of stops required to reach a node from the src node
-            vector<int> stops(n, numeric_limits<int>::max());
+            vector<int> stops(n, INT_MAX);
 
             // This is how a min-heap pq is cleared in C++
             // The second parameter is the underlying container, default to vector<int>
@@ -59,8 +59,8 @@ public:
                 // We have already encountered a path with a lower cost and fewer stops,
                 // or the number of stops exceeds the limit.
                 if (stopsFromSrcToCurr > stops[curr] || stopsFromSrcToCurr > k + 1) continue;
-                stops[curr] = stopsFromSrcToCurr;
                 if (curr == dst) return priceFromSrcToCurr;
+                stops[curr] = stopsFromSrcToCurr;
                 for (auto& [neighbor, toNeighborPrice] : adj[curr]) {
                     pq.push({priceFromSrcToCurr + toNeighborPrice, neighbor, stopsFromSrcToCurr + 1});
                 }
