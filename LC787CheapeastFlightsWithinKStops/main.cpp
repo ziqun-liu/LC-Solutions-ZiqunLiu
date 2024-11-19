@@ -29,8 +29,8 @@ public:
     class Dijkstra {
     public:
         static int findCheapestPrice(int n, vector<vector<int>> &flights, int src, int dst, int k) {
-            vector<vector<pair<int, int>>> adj(n);
-            for (const vector<int> &flight: flights) adj[flight[0]].push_back({flight[1], flight[2]});
+            vector<vector<pair<int, int>>> adj(n); // O(E) time and space
+            for (const vector<int> &flight: flights) adj[flight[0]].push_back({flight[1], flight[2]}); // O(E * K) time and space
             
             for (int i = 0; i < adj.size(); i++) {
                 cout << "Flight from city " << i << ":";
@@ -40,7 +40,7 @@ public:
             }
 
             // Initialize an array to store the number of stops required to reach a node from the src node
-            vector<int> stops(n, INT_MAX);
+            vector<int> stops(n, INT_MAX); // O(N) space
 
             // This is how a min-heap pq is cleared in C++
             // The second parameter is the underlying container, default to vector<int>
@@ -52,7 +52,7 @@ public:
 
             while (!pq.empty()) {
                 vector<int> pqTop = pq.top();
-                pq.pop();
+                pq.pop(); // O(log(E * K)
                 int priceFromSrcToCurr = pqTop[0];
                 int curr = pqTop[1];
                 int stopsFromSrcToCurr = pqTop[2];
@@ -66,7 +66,8 @@ public:
                 }
             }
             return -1;
-        }
+        } // Time complexity O(E * K + log(E * K))
+          // Space complexity O(E + E * K + N)
     };
 };
 
