@@ -13,16 +13,16 @@ public:
             for (int i = 0; i < k + 1; ++i) {
                 vector<int> tempPrices = prices;
                 for (const vector<int> &flight: flights) {
-                    int source = flight[0], destination = flight[1], priceFromCurr = flight[2];
+                    int source = flight[0], destination = flight[1], priceFromSrcToCurr = flight[2];
                     if (prices[source] == INT_MAX) continue;
-                    if (prices[source] + priceFromCurr < tempPrices[destination])
-                        tempPrices[destination] = prices[source] + priceFromCurr;
+                    if (prices[source] + priceFromSrcToCurr < tempPrices[destination])
+                        tempPrices[destination] = prices[source] + priceFromSrcToCurr;
                 }
                 prices = tempPrices;
             }
             return (prices[dst] == INT_MAX) ? -1 : prices[dst];
         } // Time complexity: O(K * N)
-        // Space complexity: O(N)
+          // Space complexity: O(N)
     };
 
     // Input: n = 4, flights = [[0,1,100],[1,2,100],[2,0,100],[1,3,600],[2,3,200]], src = 0, dst = 3, k = 1
@@ -35,10 +35,11 @@ public:
             for (int i = 0; i < adj.size(); i++) {
                 cout << "Flight from city " << i << ":";
                 for (const pair<int, int> &edge: adj[i])
-                    cout << " to " << edge.first << " (priceFromCurr " << edge.second << ")";
+                    cout << " to " << edge.first << " (price " << edge.second << ")";
                 cout << endl;
             }
 
+            // Initialize an array to store the number of stops required to reach a node from the src node
             vector<int> stops(n, numeric_limits<int>::max());
 
             // This is how a min-heap pq is cleared in C++
@@ -50,18 +51,18 @@ public:
             pq.push({0, src, 0});
 
             while (!pq.empty()) {
-                vector<int> temp = pq.top();
+                vector<int> pqTop = pq.top();
                 pq.pop();
-                int priceFromCurr = temp[0];
-                int curr = temp[1];
-                int stopsFromCurr = temp[2];
+                int priceFromSrcToCurr = pqTop[0];
+                int curr = pqTop[1];
+                int stopsFromSrcToCurr = pqTop[2];
                 // We have already encountered a path with a lower cost and fewer stops,
                 // or the number of stops exceeds the limit.
-                if (stopsFromCurr > stops[curr] || stopsFromCurr > k + 1) continue;
-                stops[curr] = stopsFromCurr;
-                if (curr == dst) return priceFromCurr;
+                if (stopsFromSrcToCurr > stops[curr] || stopsFromSrcToCurr > k + 1) continue;
+                stops[curr] = stopsFromSrcToCurr;
+                if (curr == dst) return priceFromSrcToCurr;
                 for (auto& [neighbor, toNeighborPrice] : adj[curr]) {
-                    pq.push({priceFromCurr + toNeighborPrice, neighbor, stopsFromCurr + 1});
+                    pq.push({priceFromSrcToCurr + toNeighborPrice, neighbor, stopsFromSrcToCurr + 1});
                 }
             }
             return -1;
@@ -72,11 +73,11 @@ public:
 int main() {
     Solution solution;
     vector<vector<int>> flights = {
-            {0, 1, 100},
-            {1, 2, 100},
-            {2, 0, 100},
-            {1, 3, 600},
-            {2, 3, 200}
+            {0, 1, 100}, // Flight from city 0: to 1 (price 100)
+            {1, 2, 100}, // Flight from city 1: to 2 (price 100)
+            {2, 0, 100}, // Flight from city 2: to 0 (price 100)
+            {1, 3, 600}, // Flight from city 1: to 3 (price 600)
+            {2, 3, 200}  // Flight from city 2: to 3 (price 200)
     };
     int src = 0, dst = 3, k = 1;
     Solution::Dijkstra::findCheapestPrice(4, flights, src, dst, k);
