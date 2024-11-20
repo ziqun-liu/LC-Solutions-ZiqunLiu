@@ -37,3 +37,4 @@
 | #   | Name                               | Review Dates                                           |
 |-----|------------------------------------|--------------------------------------------------------|
 | 787 | Cheapest Flights Within K Stops   | 11/20, 11/22, 11/25, 12/03, 12/19, 02/19, 05/19         |
+| 1334 | Find the City With the Smallest Number of Neighbors at a Threshold Distance   | 11/20, 11/22, 11/25, 12/03, 12/19, 02/19, 05/19         |
