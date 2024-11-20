@@ -9,7 +9,7 @@ using namespace std;
 class Solution {
     unordered_set<int> seen;
 public:
-    vector<int> findRedundantConnection(vector<vector<int>> &edges) {
+    vector<int> findRedundantConnection(const vector<vector<int>> &edges) {
         unordered_map<int, vector<int>> adjacencyLists;
         vector<int> lastRedundantEdge;
 
