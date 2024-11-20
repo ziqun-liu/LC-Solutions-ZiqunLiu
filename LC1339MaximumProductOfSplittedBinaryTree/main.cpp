@@ -24,6 +24,15 @@ public:
             getMaxProduct(root, totSum, result);
             return result % 1000000007;
         }
+
+        static int getTotalSum(TreeNode *root) {
+            if (!root)
+                return 0;
+            else
+                return getTotalSum(root->left) + getTotalSum(root->right) +
+                       root->val;
+        } // First pass
+
         static int getMaxProduct(TreeNode *root, int totSum, long long &result) {
             if (!root)
                 return 0;
@@ -33,15 +42,8 @@ public:
             long long kernel = 1LL * subTreeSum * (totSum - subTreeSum);
             result = max(result, kernel);
             return subTreeSum;
-        }
+        } // Second pass
 
-        static int getTotalSum(TreeNode *root) {
-            if (!root)
-                return 0;
-            else
-                return getTotalSum(root->left) + getTotalSum(root->right) +
-                       root->val;
-        }
     };
 };
 
