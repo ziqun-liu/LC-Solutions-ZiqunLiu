@@ -1,5 +1,15 @@
 # LC-Solutions-ZiqunLiu
 
+
+| Topic                     | Problem Number     |
+|---------------------------|--------------------|
+| Dynamic Programming       | 279               |
+| Intervals                 | 252, 253          |
+| Linked List               | 148               |
+| Graphs                    | 310, 684, 787     |
+| Shortest Path             | 1334              |
+| Binary Tree               | 1339              |
+
 *11/08/2024*
 
 | #   | Name              | Review Dates                                           |
