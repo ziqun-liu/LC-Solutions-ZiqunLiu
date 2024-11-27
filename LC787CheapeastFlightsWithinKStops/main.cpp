@@ -13,10 +13,10 @@ public:
             for (int i = 0; i < k + 1; ++i) {
                 vector<int> tempPrices = prices;
                 for (const vector<int> &flight: flights) {
-                    int source = flight[0], destination = flight[1], priceFromSrcToCurr = flight[2];
+                    int source = flight[0], destination = flight[1], price = flight[2];
                     if (prices[source] == INT_MAX) continue;
-                    if (prices[source] + priceFromSrcToCurr < tempPrices[destination])
-                        tempPrices[destination] = prices[source] + priceFromSrcToCurr;
+                    if (prices[source] + price < tempPrices[destination])
+                        tempPrices[destination] = prices[source] + price;
                 }
                 prices = tempPrices;
             }
@@ -29,45 +29,51 @@ public:
     class Dijkstra {
     public:
         static int findCheapestPrice(int n, vector<vector<int>> &flights, int src, int dst, int k) {
-            vector<vector<pair<int, int>>> adj(n); // O(E) time and space
-            for (const vector<int> &flight: flights) adj[flight[0]].push_back({flight[1], flight[2]}); // O(E * K) time and space
+            // 1st step: adjacency list
+            vector<vector<pair<int, int>>> adj(n); // O(E) time and space, E is number of edges
+            for (const vector<int> &flight: flights)
+                adj[flight[0]].emplace_back(flight[1], flight[2]); // O(E * K) time and space
             
-            for (int i = 0; i < adj.size(); i++) {
-                cout << "Flight from city " << i << ":";
-                for (const pair<int, int> &edge: adj[i])
-                    cout << " to " << edge.first << " (price " << edge.second << ")";
-                cout << endl;
-            }
+//            for (int i = 0; i < adj.size(); i++) {
+//                cout << "Flight from city " << i << ":";
+//                for (const pair<int, int> &edge: adj[i])
+//                    cout << " to " << edge.first << " (price " << edge.second << ")";
+//                cout << endl;
+//            }
 
+            // 2nd step: priority queue
             // Initialize an array to store the number of stops required to reach a node from the src node
             vector<int> stops(n, INT_MAX); // O(N) space
 
-            // This is how a min-heap pq is cleared in C++
+            // This is how a min-heap pq is created in C++
             // The second parameter is the underlying container, default to vector<int>
             // The third parameter is a comparator, default to functor std::less<T>
             // Since a non-default third parameter is used, the second parameter cannot be omitted although default
             priority_queue<vector<int>, vector<vector<int>>, greater<vector<int>>> pq;
+            pq.push({0, src, 0}); // price, node, stops
 
-            pq.push({0, src, 0});
-
+            // 3rd step: BFS
             while (!pq.empty()) {
-                vector<int> pqTop = pq.top();
+
+                vector<int> top = pq.top();
                 pq.pop(); // O(log(E * K)
-                int priceFromSrcToCurr = pqTop[0];
-                int curr = pqTop[1];
-                int stopsFromSrcToCurr = pqTop[2];
+                int price = top[0], curr = top[1], numOfStops = top[2];
+
                 // We have already encountered a path with a lower cost and fewer stops,
                 // or the number of stops exceeds the limit.
-                if (stopsFromSrcToCurr > stops[curr] || stopsFromSrcToCurr > k + 1) continue;
-                if (curr == dst) return priceFromSrcToCurr;
-                stops[curr] = stopsFromSrcToCurr;
-                for (auto& [neighbor, toNeighborPrice] : adj[curr]) {
-                    pq.push({priceFromSrcToCurr + toNeighborPrice, neighbor, stopsFromSrcToCurr + 1});
-                }
+                if (numOfStops > stops[curr] || numOfStops > k + 1) continue; // k stops allowed => k + 1 nodes allowed
+                if (curr == dst) return price;
+                stops[curr] = numOfStops;
+
+                for (auto& [next, toNextPrice] : adj[curr])
+                    pq.push({price + toNextPrice, next, numOfStops + 1});
             }
             return -1;
-        } // Time complexity O(E * K + log(E * K))
-          // Space complexity O(E + E * K + N)
+        } // Time complexity O(E * K + N + log(E * K))
+          // adjacency list takes O(E * K); stops array takes O(N); priority queue processes E * K elements thus O(log(E * K))
+
+          // Space complexity O(E + N+ E * K)
+          // adjacency list takes O(E); stops array takes O(N); priority queue takes O(E * K)
     };
 };
 
