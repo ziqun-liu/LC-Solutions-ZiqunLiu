@@ -30,6 +30,9 @@ public:
             // greater<> is the comparator where the angle bracket is left empty
             // because pair<int, int> can be deduced (I still can't explain properly why)
             priority_queue<pair<int, int>, vector<pair<int, int>>, greater<>> pq;
+            // Time complexity of priority queue is O(N^2 * log(N))
+            // as O(M * log(N)) = O(N*(N-1)/2*log(N)) = O(N^2 * log(N))
+            // Worst case of m, the number of edges, is "n choose 2", which is n(n-1)/2
             pq.push({0, src}); // 0 is total distance of node, src is node
 
             // Initialize a set to keep track of all the nodes that
@@ -55,8 +58,9 @@ public:
             return visited.size() - 1;
         }; // Summarize Dijkstra: from current node, traverse neighbor nodes, update weight if new weight is smaller
 
+        // Find smallest
         int result = -1, minCount = n;
-        for (int node = 0; node < n; ++node) {
+        for (int node = 0; node < n; ++node) { // Time complexity O(N)
             int count = dijkstra(node);
             if (count <= minCount) {
                 minCount = count;
@@ -64,9 +68,9 @@ public:
             }
         }
         return result;
-    } // Time complexity O(N^2 * log(N)), n^2 is each node getting added to heap, log(n) is min heap
-      // Space complexity O(N)
-      
+    } // Time complexity O(N^3 * log(N)), n^2 is each node getting added to heap, log(n) is min heap
+      // Space complexity O(M + N), m being number of edges, n being number of cities
+
 };
 
 int main() {
