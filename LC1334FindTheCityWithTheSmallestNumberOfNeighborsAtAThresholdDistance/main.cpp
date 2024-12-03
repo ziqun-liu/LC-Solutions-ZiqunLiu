@@ -69,7 +69,13 @@ public:
         }
         return result;
     } // Time complexity O(N^3 * log(N)), n^2 is each node getting added to heap, log(n) is min heap
-      // Space complexity O(M + N), m being number of edges, n being number of cities
+      // Adjacency list typically takes O(E + V), E being number of edges and V being number of vertices
+      // In the worse case, a dense tree, number of edges can be calculated by V*(V-1)/2. Hence, O(E) = O(V^2)
+      // Memorize: Dijkstra's algorithm takes O((V + E) * log(V)) = O((V + V^2) * log(V)) = O(V^2 * log(V))
+      // In the end of this problem, the finding smallest step has a loop that takes O(N), and each loop runs dijkstra
+      // once and hence the total time complexity is O(V * V^2 * log(V)) = O(V^3 * log(V))
+
+      // Space complexity O(E + V) = O(V^2)
 
 };
 
