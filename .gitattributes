@@ -22,5 +22,3 @@
 *.o binary
 *.ilk binary
 *.ipch binary
-
-CMakePresets.json
