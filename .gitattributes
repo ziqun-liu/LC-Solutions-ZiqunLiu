@@ -1,0 +1,24 @@
+# Handle line endings automatically
+* text=auto
+
+# Explicitly set text files
+*.cpp text
+*.h text
+*.hpp text
+*.txt text
+*.cmake text
+*.md text
+
+# Binary files
+*.png binary
+*.jpg binary
+*.exe binary
+*.dll binary
+*.lib binary
+*.pdb binary
+
+# Prevent diffing on build files
+*.obj binary
+*.o binary
+*.ilk binary
+*.ipch binary
