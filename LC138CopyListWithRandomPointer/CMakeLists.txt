@@ -12,7 +12,7 @@ endif()
 project ("LC138CopyListWithRandomPointer")
 
 # Add source to this project's executable.
-add_executable (LC138CopyListWithRandomPointer "LC138CopyListWithRandomPointer.cpp" "LC138CopyListWithRandomPointer.h")
+add_executable (LC138CopyListWithRandomPointer "main.cpp" )
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET LC138CopyListWithRandomPointer PROPERTY CXX_STANDARD 20)

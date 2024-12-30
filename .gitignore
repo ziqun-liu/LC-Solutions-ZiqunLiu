@@ -1,3 +1,13 @@
+# Ignore Visual Studio build directories
+/out/build/
+/out/build/*-debug/
+/out/build/x64-debug/
+
+
+# Ignore Ninja build logs
+*.ninja_log
+
+
 # Existing entries
 .DS_Store
 .vscode/
