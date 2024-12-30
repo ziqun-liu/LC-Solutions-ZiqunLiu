@@ -2,6 +2,7 @@
 /out/build/
 /out/build/*-debug/
 /out/build/x64-debug/
+
 CMakePresets.json
 
 # Ignore Ninja build logs
