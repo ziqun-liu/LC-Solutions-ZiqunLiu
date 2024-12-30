@@ -1,9 +1,6 @@
 # Handle line endings automatically
 * text=auto
 
-# Ignore Ninja build logs
-*.ninja_log
-
 # Explicitly set text files
 *.cpp text
 *.h text
@@ -25,3 +22,5 @@
 *.o binary
 *.ilk binary
 *.ipch binary
+
+CMakePresets.json
