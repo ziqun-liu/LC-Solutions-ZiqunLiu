@@ -1,7 +1,7 @@
 # Ignore Visual Studio build directories
-/out/build/
-/out/build/*-debug/
-/out/build/x64-debug/
+*/out/build/
+*/out/build/*-debug/
+*/out/build/x64-debug/
 
 CMakePresets.json
 

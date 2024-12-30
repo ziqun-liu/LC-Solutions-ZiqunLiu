@@ -1,3 +1,0 @@
-C:/dev/LC-Solutions-ZiqunLiu/LC2AddTwoNumbers/out/build/x64-debug/CMakeFiles/LC2AddTwoNumbers.dir
-C:/dev/LC-Solutions-ZiqunLiu/LC2AddTwoNumbers/out/build/x64-debug/CMakeFiles/edit_cache.dir
-C:/dev/LC-Solutions-ZiqunLiu/LC2AddTwoNumbers/out/build/x64-debug/CMakeFiles/rebuild_cache.dir
