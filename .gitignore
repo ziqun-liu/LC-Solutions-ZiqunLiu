@@ -1,11 +1,39 @@
+# Existing entries
 .DS_Store
-.vscode
-__pycache__
-.pytest_cache
+.vscode/
+__pycache__/
+.pytest_cache/
 .class
 .gitignore.save
 
 cmake-build-debug/
 .idea/
 
-.png
+# Additions for Visual Studio
+*.suo
+*.user
+*.userosscache
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.ipch/
+*.ncb
+*.obj
+*.log
+*.tlog
+*.pch
+*.idb
+*.pdb
+*.exe
+*.ilk
+*.lib
+*.dll
+*.o
+*.iobj
+*.ipdb
+*.iobj
+*.o.*
+*_i.c
+*.browse.VC.db
+*.VC.db
+.vs/
