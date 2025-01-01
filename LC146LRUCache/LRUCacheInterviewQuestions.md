@@ -1,8 +1,8 @@
 # LRU Cache Interview Questions
 
 ## Basic Understanding
-1. **What is an LRU Cache?**
-   - Explain the concept of Least Recently Used (LRU) and how it helps manage a fixed-size cache.
+1. **What is an LRU Cache?** \
+Explain the concept of Least Recently Used (LRU) and how it helps manage a fixed-size cache.
    - Answer: An LRU Cache, or Least Recently Used Cache, is a data structure used to store a fixed number of items, where the least recently used item is removed when the cache reaches its capacity and a new item needs to be added.
 
 2. **Why do we use an LRU Cache?**
