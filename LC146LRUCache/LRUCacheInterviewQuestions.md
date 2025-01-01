@@ -10,10 +10,12 @@ Explain the concept of Least Recently Used (LRU) and how it helps manage a fixed
      -The doubly linked list maintains the order of usage, allowing 𝑂(1)insertion and removal of items from the least or most recently used positions.
 
 2. **Why do we use an LRU Cache?**
-   - Discuss use cases like memory management, page replacement algorithms, or database caching.
+Discuss use cases like memory management, page replacement algorithms, or database caching.
+   - An LRU Cache is used to efficiently manage limited memory by keeping only the most recently accessed data and discarding the least recently used items. This improves performance in scenarios like database query caching, web browser caching, and operating system memory management, where accessing data from the source is expensive and we want quick access to frequently used items.
 
 3. **What are the time complexity and space complexity requirements for an optimal LRU Cache?**
-   - Expected: \( O(1) \) for both `get` and `put`, with \( O(capacity) \) space complexity.
+Expected: \( O(1) \) for both `get` and `put`, with \( O(capacity) \) space complexity.
+   - An optimal LRU Cache has a time complexity of O(1) for both get and put operations, achieved using a combination of a hash map and a doubly linked list. The space complexity is O(capacity), where capacity is the maximum number of items the cache can hold.
 
 ---
 
