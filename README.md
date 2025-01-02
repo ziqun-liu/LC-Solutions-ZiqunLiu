@@ -5,7 +5,7 @@
 |---------------------------|--------------------|
 | Dynamic Programming       | 279               |
 | Intervals                 | 252, 253          |
-| Linked List               | 2, 138, 148       |
+| Linked List               | 2, 23, 25, 138, 148 |
 | Graphs                    | 310, 684, 787     |
 | Shortest Path             | 1334              |
 | Binary Tree               | 1339              |
