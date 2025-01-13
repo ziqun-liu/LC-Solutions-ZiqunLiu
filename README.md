@@ -8,7 +8,7 @@
 | Linked List               | 2, 23, 25, 138, 148 |
 | Graphs                    | 310, 684, 787     |
 | Shortest Path             | 1334              |
-| Binary Tree               | 1339              |
+| Binary Tree               | 226, 1339         |
 | Sliding Window            | 3, 76, 424, 567   |
 
 | Date       | #    | Name                                                                    | Review Dates                                           |
@@ -33,3 +33,4 @@
 | 01/03/2025 | 424  | Longest Repeating Character Replacement                                 | 01/04, 01/06, 01/09, 01/17, 02/03, 04/03, 07/04        |
 | 01/04/2025 | 567  | Permutation in String                                                   | 01/05, 01/07, 01/10, 01/18, 02/03, 04/04, 07/05        |
 | 01/08/2025 | 76   | Minimum Window Substring                                                | 01/09, 01/11, 01/14, 01/22, 02/08, 04/08, 07/08        |
+| 01/12/2025 | 226  | Invert Binary Tree                                                      | 01/13, 01/15, 01/19, 01/26, 02/12, 04/12, 07/12        |
