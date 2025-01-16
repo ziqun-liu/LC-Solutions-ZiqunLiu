@@ -5,7 +5,7 @@ class Solution:
         l = r = 0
 
         while r < len(nums):
-            while dq and nums[q[-1]] < nums[r]:
+            while dq and nums[dq[-1]] < nums[r]:
                 dq.pop()
             dq.append(r)
 

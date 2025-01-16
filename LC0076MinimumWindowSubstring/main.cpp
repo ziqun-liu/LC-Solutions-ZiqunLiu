@@ -10,8 +10,8 @@ class Solution
 public:
     string minWindow(string s, string t) 
 	{
-		// Time complexity O(N)
-		// Space complexity O(M) - number of unique chars
+		// Time complexity O(N) - iterate through string s
+		// Space complexity O(M) - number of unique chars in string t
 
 		if (t.empty())
 		{

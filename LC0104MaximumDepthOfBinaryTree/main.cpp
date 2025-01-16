@@ -20,7 +20,8 @@ public:
     class RecursiveDFS 
     {
     public:
-        static int maxDepth(TreeNode* root)
+        // post-order traversal calculates the height of root node, which is the max depth
+        static int maxDepth(TreeNode* root) 
         {
             // Time complexity O(N)
             // Space complexity worst case O(N), avg case O(logN)

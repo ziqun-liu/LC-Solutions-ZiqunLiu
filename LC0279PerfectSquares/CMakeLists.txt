@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.28)
-project(279__Perfect_Squares)
+project(LC0279PerfectSquares)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(279__Perfect_Squares main.cpp
+add_executable(LC0279PerfectSquares main.cpp
         dp.cpp
         bruteForce.cpp)
