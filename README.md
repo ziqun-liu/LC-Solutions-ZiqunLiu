@@ -8,7 +8,8 @@
 | Linked List               | 2, 23, 25, 138, 148 |
 | Graphs                    | 310, 684, 787     |
 | Shortest Path             | 1334              |
-| Binary Tree               | 226, 543, 1339    |
+| Binary Tree               | 100, 102, 110, 199, 226, 235, 543, 572, 1339|
+| Binary Search Tree        | 98                |
 | Sliding Window            | 3, 76, 424, 567   |
 
 | Date       | #    | Name                                                                    | Review Dates                                           |
@@ -42,3 +43,4 @@
 |            | 102  |  Binary Tree Level Order Traversal                                      | 01/16, 01/18, 01/22, 01/29, 02/15, 04/15, 07/15        |
 |            | 199  |  Binary Tree Right Side View                                            | 01/16, 01/18, 01/22, 01/29, 02/15, 04/15, 07/15        |
 | 01/16/2025 | Review 1448 |  Count Good Nodes in Binary Tree                                 |                                                        |
+|            | 98 |  Validate Binary Search Tree                                              | 01/17, 01/19, 01/23, 01/30, 02/16, 04/16, 07/16        |
