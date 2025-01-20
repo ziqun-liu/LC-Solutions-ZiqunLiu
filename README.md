@@ -1,6 +1,7 @@
 # LC-Solutions-ZiqunLiu
 
-### This is my LeetCoding journal. I try to solve each problem in both C++ and Python. All C++ projects are built using CMake.
+### This is my LeetCoding journal. I try to solve each problem in both C++ and Python.\
+All C++ projects are built using CMake.
 ---
 
 | Topic                 | Problem Number(s)                                       |
@@ -51,4 +52,5 @@
 | 01/18/2025 | 124  |  Binary Tree Maximum Path Sum                                           | 01/19, 01/21, 01/25, 02/01, 02/18, 04/18, 07/18        |
 | 01/19/2025 | 297  |  Serialize and Deserialize Binary Tree                                  | 01/20, 01/22, 01/26, 02/02, 02/19, 04/19, 07/19        |
 |            | 208  |  Implement Trie (Prefix Tree)                                           |                                                        |
+|            | 211  |  Design Add And Search Words Data Structure                             |                                                        |
 
