@@ -1,7 +1,7 @@
 # LC-Solutions-ZiqunLiu
 
 ### This is my LeetCoding journal. I try to solve each problem in both C++ and Python.\
-All C++ projects are built using CMake.
+### All C++ projects are built using CMake.
 ---
 
 | Topic                 | Problem Number(s)                                       |
@@ -14,7 +14,8 @@ All C++ projects are built using CMake.
 | Binary Tree           | 100, 102, 110, 124, 199, 226, 230, 235, 297, 543, 572, 1339, 1448 |
 | Binary Search Tree    | 98                                                     |
 | Sliding Window        | 3, 76, 424, 567                                        |
-| Trie (Prefix Tree)    | 208                                                    |
+| Trie (Prefix Tree)    | 208, 211, 212                                          |
+| Backtracking          | 79                                                     |
 
 | Date       | #    | Name                                                                    | Review Dates                                           |
 |------------|------|-------------------------------------------------------------------------|--------------------------------------------------------|
@@ -53,4 +54,6 @@ All C++ projects are built using CMake.
 | 01/19/2025 | 297  |  Serialize and Deserialize Binary Tree                                  | 01/20, 01/22, 01/26, 02/02, 02/19, 04/19, 07/19        |
 |            | 208  |  Implement Trie (Prefix Tree)                                           |                                                        |
 |            | 211  |  Design Add And Search Words Data Structure                             |                                                        |
+| 01/25/2025 | 79   |  Word Search                                                            | 01/26, 01/28, 02/1, 02/08, 02/25, 04/25, 07/25         |
+|            | 212  |  Word Search II                                                         |                                                        |
 
