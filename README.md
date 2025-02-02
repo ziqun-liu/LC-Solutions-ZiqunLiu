@@ -14,8 +14,8 @@
 | Binary Tree           | 100, 102, 110, 124, 199, 226, 230, 235, 297, 543, 572, 1339, 1448 |
 | Binary Search Tree    | 98                                                     |
 | Sliding Window        | 3, 76, 424, 567                                        |
-| Trie (Prefix Tree)    | 208, 211, 212                                          |
-| Backtracking          | 79                                                     |
+| Trie (Prefix Tree)    | 79, 208, 211, 212                                          |
+| Backtracking          | 39, 46, 78                                                  |
 
 | Date       | #    | Name                                                                    | Review Dates                                           |
 |------------|------|-------------------------------------------------------------------------|--------------------------------------------------------|
@@ -48,7 +48,7 @@
 |            | 102  |  Binary Tree Level Order Traversal                                      |                                                        |
 |            | 199  |  Binary Tree Right Side View                                            |                                                        |
 | 01/16/2025 | Review 1448 |  Count Good Nodes in Binary Tree                                 | 01/17, 01/19, 01/23, 01/30, 02/16, 04/16, 07/16        |
-|            | 98 |  Validate Binary Search Tree                                              |                                                        |
+|            | 98   |  Validate Binary Search Tree                                            |                                                        |
 | 01/17/2025 | 230  |  Kth Smallest Element in a BST                                          | 01/18, 01/20, 01/24, 01/31, 02/17, 04/17, 07/17        |
 | 01/18/2025 | 124  |  Binary Tree Maximum Path Sum                                           | 01/19, 01/21, 01/25, 02/01, 02/18, 04/18, 07/18        |
 | 01/19/2025 | 297  |  Serialize and Deserialize Binary Tree                                  | 01/20, 01/22, 01/26, 02/02, 02/19, 04/19, 07/19        |
@@ -56,4 +56,7 @@
 |            | 211  |  Design Add And Search Words Data Structure                             |                                                        |
 | 01/25/2025 | 79   |  Word Search                                                            | 01/26, 01/28, 02/1, 02/08, 02/25, 04/25, 07/25         |
 |            | 212  |  Word Search II                                                         |                                                        |
+| 02/01/2025 | 78   |  Subsets                                                                | 02/02, 02/04, 02/07, 02/15, 03/01, 05/01, 08/01        |
+|            | 46   |  Permutations                                                           |                                                        |
+|            | 39   |  Combination Sum                                                        |                                                        |
 
