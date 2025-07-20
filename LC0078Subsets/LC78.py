@@ -1,24 +1,29 @@
-from typing import List
-
-
 class Solution:
-    # Time O(N2^N) space O(N)
-    def subsets(self, nums: List[int]) -> List[List[int]]:
-        res, subset = [], []
+    # Time: O(N * 2^N), Space: O(N)
+    def backtrack(self, i: int, res: list[int], subset: list[int], nums: list[int]):
+        if i == len(nums):
+            res.append(subset.copy())
+            return
 
-        def dfs(i):
-            if i == len(nums):
-                res.append(subset.copy())
-                return
+        # Include nums[i]
+        subset.append(nums[i])
+        self.backtrack(i + 1, res, subset, nums)
 
-            subset.append(nums[i])
-            dfs(i + 1)
+        # Exclude nums[i]
+        subset.pop()
+        self.backtrack(i + 1, res, subset, nums)
 
-            # undo the append
-            subset.pop()
-            dfs(i + 1)
 
-        dfs(0)
-        return res
 
-        
+def main():
+    sol = Solution()
+    nums = [1, 2, 3]
+    res = []
+    sol.backtrack(0, res, [], nums)
+
+    print("All subsets:")
+    for subset in res:
+        print("{", " ".join(map(str, subset)), "}")
+
+if __name__ == "__main__":
+    main()
