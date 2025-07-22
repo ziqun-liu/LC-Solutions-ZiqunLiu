@@ -69,5 +69,5 @@
 |            | 1231        | Divide Chocolate                                             |
 | 3/20/2025  | 1011        | Capacity To Ship Packages Within D Days                      |
 |            | 1539        | Kth Missing Positive Number                                  |
-|            |             |                                                              |
+| 7/21/2025  | 547         | Number of Provinces                                          |
 
