@@ -80,3 +80,38 @@ class Solution:
 
     def mergeSort(self, nums):
         self.divide(0, len(nums) - 1, nums)
+
+
+# Quick Sort
+# TC O(NlogN) - two pointers O(N), divide O(logN)
+# SC O(1) - not accouting for recursive stack space
+class Solution:
+	def quick_sort(self, nums):
+		self.sort(0, len(nums) - 1, nums)
+		return nums
+
+	def sort(self, low, high, nums):
+		if low < high:
+			# find the partition index
+			partition_ind = self.partition(pivot, low, high, nums)
+
+			# Recursively do quick sorting
+			self.sort(low, partition_ind - 1, nums)
+			self.sort(partition_ind + 1, high, nums)
+
+	def partition(self, pivot, low, high, nums):
+		# pick a pivot	
+		pivot = nums[low]
+		l, r = low, high
+
+		while l < r:
+			while nums[l] <= pivot and l < high:
+				l += 1
+			while r > pivot and r > low:
+				r -= 1
+			# If l and r have not crossed
+			if l < r:
+				nums[l], nums[r] = nums[r], nums[l]
+
+		nums[low], nums[r] = nums[r], nums[low]
+		return r
