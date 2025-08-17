@@ -53,6 +53,8 @@ class Solution:
 
 
 # ====================== DFS ======================
+# TC O(V + E)
+# SC O(V)
 
 class Solution:
 	def is_bipartite(self, V: int, adj_list: list) -> bool:
