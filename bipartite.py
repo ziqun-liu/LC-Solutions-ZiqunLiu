@@ -1,6 +1,8 @@
 from collections import deque
 
-
+# ====================== BFS ======================
+# TC O(V + V + 2E) = O(V + E) - outer loop V, BFS V + 2E
+# SC O(V + V) = O(V) - color array V, deque V
 class Solution:
 	def is_bipartite(self, V: int, adj_list: list) -> bool:
 		# 节点从 0 开始
@@ -49,3 +51,28 @@ class Solution:
         
         return True
 
+
+# ====================== DFS ======================
+
+class Solution:
+	def is_bipartite(self, V: int, adj_list: list) -> bool:
+		color = [-1 for _ in range(V)]
+
+		for start in range(V):
+			if color[start] == -1:
+				color[start] = 0
+				if not self.dfs(start, adj_list, color):
+					return False
+
+		return True
+
+	def dfs(self, start: int, adj_list: list, color: list):
+		for neighbor in adj_list[start]:
+			if color[neighbor] == -1:
+				color[neighbor] = 1 - color[start]
+				if not self.dfs(neighbor, adj_list, color):
+					return False
+			elif color[neighbor] == color[start]:
+				return False
+
+		return True
