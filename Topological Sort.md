@@ -1,4 +1,10 @@
-# ======================== DFS ======================== 
+# Topological Sort
+
+Detect cycle in a directed graph 中用了拓扑排序的 Kahn's 算法，这里正好列出两种拓扑排序。
+
+## Method 1: DFS
+
+```python
 class Solution:
     # 解决依赖关系排序问题
     # 使每个事物都出现在它所依赖的事物之后
@@ -28,8 +34,11 @@ class Solution:
                 self.dfs(neighbor, visited, adj, stk)
         
         stk.append(node)
+```
 
-# ======================== Kahn's Algorithm (BFS + in degree) ======================== 
+## Method 2: 
+
+```python
 from collections import deque
 
 class Solution:
@@ -65,10 +74,8 @@ class Solution:
             for neighbor in adj[node]:
                 in_degree[neighbor] -= 1
                 if in_degree[neighbor] == 0:
-                    dq.append(neighbor)
-                    
-        # if len(res) != V:
-            # 存在环，无法完成拓扑排序
-            # return []  # 或抛出异常
-                    
+                    dq.append(neighbor)                    
         return res
+
+```
+
