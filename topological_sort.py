@@ -1,3 +1,4 @@
+# ======================== DFS ======================== 
 class Solution:
     # 解决依赖关系排序问题
     # 使每个事物都出现在它所依赖的事物之后
@@ -27,3 +28,47 @@ class Solution:
                 self.dfs(neighbor, visited, adj, stk)
         
         stk.append(node)
+
+# ======================== Kahn's Algorithm (BFS) ======================== 
+from collections import deque
+
+class Solution:
+    
+    def topoSort(self, V, edges):
+        # queue, in_degree, put in_degree is zero into queue
+        # TC O(2E + V+2E + V+2E) = O(V + E)
+        # SC O(2E + V + V)
+        
+        in_degree = [0 for _ in range(V)]
+        adj = [[] for _ in range(V)]
+        dq = deque()
+        res = []
+
+        # 1. 构建邻接表
+        for u, v in edges:
+            adj[u].append(v)
+            
+        # 2. 计算入度
+        for node in range(V):
+            for neighbor in adj[node]:
+                in_degree[neighbor] += 1
+        
+        # 3. 初始化：入度为0的节点入队
+        for i in range(V):
+            if in_degree[i] == 0:
+                dq.append(i)
+        
+        # 4. BFS 
+        while dq:
+            node = dq.popleft()
+            res.append(node)
+            for neighbor in adj[node]:
+                in_degree[neighbor] -= 1
+                if in_degree[neighbor] == 0:
+                    dq.append(neighbor)
+                    
+        # if len(res) != V:
+            # 存在环，无法完成拓扑排序
+            # return []  # 或抛出异常
+                    
+        return res
