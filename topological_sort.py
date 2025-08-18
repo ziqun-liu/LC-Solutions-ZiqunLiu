@@ -47,17 +47,17 @@ class Solution:
         # 1. 构建邻接表
         for u, v in edges:
             adj[u].append(v)
-            
+
         # 2. 计算入度
         for node in range(V):
             for neighbor in adj[node]:
                 in_degree[neighbor] += 1
-        
+
         # 3. 初始化：入度为0的节点入队
         for i in range(V):
             if in_degree[i] == 0:
                 dq.append(i)
-        
+
         # 4. BFS 
         while dq:
             node = dq.popleft()
