@@ -36,7 +36,7 @@ class Solution:
         stk.append(node)
 ```
 
-## Method 2: 
+## Method 2 Kahn 算法: 
 
 ```python
 from collections import deque
