@@ -78,4 +78,3 @@ class Solution:
         
         return distance[n] if distance[n] != float('inf') else -1
 ```
-
