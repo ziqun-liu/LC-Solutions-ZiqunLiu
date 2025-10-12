@@ -173,9 +173,8 @@ class HeapSort:
         # 向上堆化
         i = self.n - 1
         while (self.has_parent(i) and self.nums[self.parent(i)] < self.nums[i]):
-            parent_idx = self.parent(i)
             self.nums[i], self.nums[parent_idx] = self.nums[parent_idx], self.nums[i]
-            i = parent_idx
+            i = self.parent(i)
     
     def delete_max(self):
         """删除最大元素（堆顶）"""
