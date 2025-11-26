@@ -50,6 +50,38 @@ class Solution:
 - Queue 需要保存父节点 (node, parent)
 - bfs 当邻节点已被访问且不为父节点时检测到环
 
+```python
+def has_cycle_bfs(adj_list, n):
+    visited = [False] * n
+    
+    def bfs(start):
+        queue = deque([(start, -1)])  # (当前节点, 父节点)
+        visited[start] = True
+        
+        while queue:
+            node, parent = queue.popleft()
+            
+            for neighbor in adj_list[node]:
+                if not visited[neighbor]:
+                    visited[neighbor] = True
+                    queue.append((neighbor, node))  # 记录父节点
+                elif neighbor != parent:
+                    # 遇到已访问的非父节点，找到环
+                    return True
+        
+        return False
+    
+    # 检查所有连通分量
+    for node in range(n):
+        if not visited[node]:
+            if bfs(node):
+                return True
+    
+    return False
+```
+
+
+
 ## Q2. Detect cycle in a directed graph
 
 两种方法：DFS，Kahn's Algorithm(BFS + in_degree)
