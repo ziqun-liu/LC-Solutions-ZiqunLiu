@@ -164,13 +164,55 @@ FW(G) {
 }
 ```
 
-Running time is O(n^3). 
+Running time is O(n^3) regardless of sparse or dense
 
 Can detect negatively weighted cycle.
 
 If there is no negatively weighted cycle, can use Dijkstra n times => Theta(n m lg n) < Theta (n^3).
 
 
+
+## All Pair Shortest Path
+
+```python
+#Dijkstra
+def all_pairs_shortest_paths_dijkstra(
+	n: int,
+    edges: List[List[int]],
+    directed: bool = False
+) -> List[List[int]]:
+
+    adj = [[] for _ in range(n)]
+    for u, v, weight in edges:
+        adj[u].append((v, weight))
+        if directed:
+            adj[v].append((u, weight))
+            
+	distance_matrix = [[float("inf")] * n for _ in range(n)]
+    
+    for src in range(n):  # n running time
+        distance = [float("inf")] * n
+        distance[src] = 0
+        heap = [(0, src)]  # (dist, node)
+        
+        while heap:  # m lg n running time, in dense graph O(n^2 lg n)
+            dist, u = heapq.heappop(heap)
+            
+            if dist > distance[u]:
+                continue
+                
+			for v, w in adj[u]:
+                if dist + w < distance[v]:
+                    distance[v] = dist + w
+                    heapq.heappuhs(heap, (dist + w, v))
+
+            distance_matrix[src] = distance
+            
+	return distance_matrix
+
+	# sparse graph m = O(n) => O(mn lg n) = O(n^2 lg n) running time
+    # dense graph O(n^3 lg n) r.t.
+```
 
 
 
