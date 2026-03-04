@@ -214,6 +214,38 @@ def all_pairs_shortest_paths_dijkstra(
     # dense graph O(n^3 lg n) r.t.
 ```
 
+```python
+# Bellman-Ford
+def all_pairs_shortest_paths_bellman_ford(
+	n: int,
+    edges: List[List[int]],
+    directed: bool = False
+) -> List[List[int]]:
+
+    adj = [[] for _ in range(n)]
+    for u, v, weight in edges:
+        adj[u].append((v, weight))
+        if directed:
+            adj[v].append((u, weight))
+            
+	distance_matrix = [[float("inf")] * n for _ in range(n)]
+    
+    for src in range(n):
+        distance = [float("inf")] * n
+        distance[src] = 0
+
+        # Relax edges up to (n-1) times
+        for _ in range(n - 1):
+            for u in range(n):
+                for v, weight in adj[u]:
+                    if distance[u] + weight < distance[v]:
+                        distance[v] = distance[u] + weight
+                        
+		distance_matrix[src] = distance
+        
+	return distance_matrix
+```
+
 
 
 
